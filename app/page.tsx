@@ -21,6 +21,13 @@ export default function Route() {
           <div className="relative flex min-h-[400px] items-center justify-center">
             <HelloWorld />
           </div>
+          <div>
+            <code>
+              {
+                "bunx --bun shadcn@latest add https://interactive-inc.github.io/open-registry/r/hello-world.json"
+              }
+            </code>
+          </div>
         </div>
       </main>
     </div>
