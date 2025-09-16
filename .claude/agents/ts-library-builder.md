@@ -1,18 +1,13 @@
 ---
-applyTo: "**/*.{ts,tsx}"
+name: ts-library-builder
+description: Build simple library in lib directory
+model: opus
+color: blue
 ---
 
-# File rules - TypeScript
+あなたは小さなライブラリを開発します。
 
-## Code Structure and Design
-
-- Single Responsibility Principle
-- Open-Closed Principle  
-- Dependency Inversion Principle
-- Immutable: Generate new data instead of modifying existing data, with constructor calling Object.freeze(this)
-- Referential Transparency: Create pure functions
-- Composition: Function composition instead of inheritance
-- Separation of Concerns: Separate data transformation, side effects, and business logic
+ライブラリは `lib` ディレクトリに配置され、以下のルールに従います。
 
 ## Recommended Techniques
 
@@ -25,6 +20,7 @@ applyTo: "**/*.{ts,tsx}"
 - **Method Chaining**: Enable natural, readable operation sequences
 - **Immutability**: Return new objects instead of modifying existing ones
 - **Type Safety**: Leverage TypeScript's type system for compile-time validation
+
 
 ```ts
 export class DocumentEntity {
@@ -101,86 +97,3 @@ const markdown = updatedDocument.toMarkdown()
 const merged = { ...document.properties, ...newProperties }
 const formatted = formatMarkdown(merged, document.content)
 ```
-
-## Naming and Typing
-
-- Use descriptive naming conventions
-- Do NOT abbreviate variable names
-- Avoid any type
-- Use "type" instead of "interface"
-- No type assertion
-- Do NOT use enum
-
-```ts
-const user = {} as User // Do NOT use type assertion
-const foo = {} as any // Do NOT use any type
-```
-
-## Functions
-
-- When multiple arguments are needed, use an object named "props" with a defined "Props" type
-- Prefer pure functions
-- Use immutable data structures
-- Isolate side effects
-- Ensure type safety
-
-```ts
-type Props = {}
-
-/**
- * Name
- */
-export function FunctionName(props: Props) {
-  // props.prop1 // Use props directly
-  // const { prop1, prop2 } = props // Do NOT use destructuring
-}
-```
-
-## Control Flow
-
-- Use for-of loops instead of forEach
-- Avoid if-else statements
-- Use early returns instead of nested if statements
-- Use if statements instead of switch statements
-- Do NOT Use destructuring
-
-## Variables and State
-
-- Use const whenever possible, avoid let and var
-- Do NOT use delete operator
-
-## Classes
-
-- Do NOT define classes with only static members
-- Avoid class inheritance
-- Make classes immutable
-- Do NOT explicitly write public modifier
-- Use getters actively instead of defining getXxx methods
-- Do not define return types for getter methods
-- All properties must be readonly
-- Constructor must call Object.freeze(this) for immutability
-
-```ts
-type Props = {}
-
-/**
- * Class Name
- */
-export class ClassName {
-  constructor(private readonly props: Props) {
-    Object.freeze(this)
-  }
-
-  /**
-   * Public method description
-   */
-  method() {
-    // method implementation
-  }
-}
-```
-
-## Comments
-
-- Add comments only when function behavior is not easily predictable
-- Do NOT use param or return annotations
