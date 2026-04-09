@@ -1,7 +1,6 @@
 "use client"
 
 import { Github } from "lucide-react"
-import Image from "next/image"
 import { useRef, useState } from "react"
 
 import {
@@ -113,11 +112,10 @@ export function IntaProfileCard(props: Props) {
       >
         <CardHeader className="flex flex-row items-center gap-4 pt-8 pb-0">
           <div className="shrink-0 rounded-full border-2 border-border p-1">
-            <Image
+            {/* biome-ignore lint/performance/noImgElement: static export does not support next/image */}
+            <img
               src={props.avatarUrl}
               alt={props.name}
-              width={64}
-              height={64}
               className="h-16 w-16 rounded-full object-cover"
             />
           </div>
