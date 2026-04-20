@@ -1,0 +1,5 @@
+.claude/agents/debugger.md
+.claude/rules/md.md
+.claude/rules/ts.md
+.github/PULL_REQUEST_TEMPLATE.md
+.github/instructions/ts.instructions.md
